@@ -1,9 +1,9 @@
 {
   "workspaceRoot": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio",
   "metadata": {
-    "generatedAt": 1775381579903,
+    "generatedAt": 1775382357268,
     "maxTokens": 16384,
-    "usedTokens": 1687,
+    "usedTokens": 1692,
     "fileCount": 60,
     "includedEntryCount": 60,
     "refreshMode": "auto",
@@ -76,7 +76,7 @@
     {
       "relativePath": "src/types/index.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
-      "score": 0.15972241097559906,
+      "score": 5.333442851560437e-7,
       "tags": [
         {
           "relativePath": "src/types/index.ts",
@@ -141,7 +141,7 @@
     {
       "relativePath": "src/hooks/useCameraAnimation.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useCameraAnimation.ts",
-      "score": 0.15312546238612268,
+      "score": 5.22677399452925e-7,
       "tags": [
         {
           "relativePath": "src/hooks/useCameraAnimation.ts",
@@ -177,29 +177,9 @@
       "pathOnly": false
     },
     {
-      "relativePath": "src/App.tsx",
-      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
-      "score": 0.03724393438862271,
-      "tags": [
-        {
-          "relativePath": "src/App.tsx",
-          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
-          "name": "App",
-          "kind": "def",
-          "line": 30,
-          "language": "tsx"
-        }
-      ],
-      "includedLines": [
-        30
-      ],
-      "isSpecialFile": false,
-      "pathOnly": false
-    },
-    {
       "relativePath": "src/components/Scene/DendriteGlow.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriteGlow.tsx",
-      "score": 0.03724393438862271,
+      "score": 1.1733574273433056e-7,
       "tags": [
         {
           "relativePath": "src/components/Scene/DendriteGlow.tsx",
@@ -235,9 +215,58 @@
       "pathOnly": false
     },
     {
+      "relativePath": "src/hooks/useDeviceDetection.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+      "score": 1.1733574273433007e-7,
+      "tags": [
+        {
+          "relativePath": "src/hooks/useDeviceDetection.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+          "name": "useIsMobile",
+          "kind": "def",
+          "line": 2,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useDeviceDetection.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+          "name": "useTouchDevice",
+          "kind": "def",
+          "line": 23,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        2,
+        23
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/App.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
+      "score": 1.1733574273433006e-7,
+      "tags": [
+        {
+          "relativePath": "src/App.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
+          "name": "App",
+          "kind": "def",
+          "line": 30,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        30
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
       "relativePath": "src/components/Scene/Nucleus.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\Nucleus.tsx",
-      "score": 0.03724393438862271,
+      "score": 1.1733574273433006e-7,
       "tags": [
         {
           "relativePath": "src/components/Scene/Nucleus.tsx",
@@ -257,7 +286,7 @@
     {
       "relativePath": "src/components/Scene/HolographicGrid.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\HolographicGrid.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/Scene/HolographicGrid.tsx",
@@ -286,7 +315,7 @@
     {
       "relativePath": "src/components/Scene/ParticleSystem.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ParticleSystem.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/Scene/ParticleSystem.tsx",
@@ -315,7 +344,7 @@
     {
       "relativePath": "src/components/UI/AboutModal.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\AboutModal.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/UI/AboutModal.tsx",
@@ -344,7 +373,7 @@
     {
       "relativePath": "src/components/UI/ContactModal.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ContactModal.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/UI/ContactModal.tsx",
@@ -373,7 +402,7 @@
     {
       "relativePath": "src/components/UI/PlaythroughOverlay.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\PlaythroughOverlay.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/UI/PlaythroughOverlay.tsx",
@@ -402,7 +431,7 @@
     {
       "relativePath": "src/components/UI/ProjectCard.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ProjectCard.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/UI/ProjectCard.tsx",
@@ -431,7 +460,7 @@
     {
       "relativePath": "src/components/UI/SkillsPanel.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\SkillsPanel.tsx",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/components/UI/SkillsPanel.tsx",
@@ -460,7 +489,7 @@
     {
       "relativePath": "src/hooks/usePlaythroughSound.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\usePlaythroughSound.ts",
-      "score": 0.03724393438862269,
+      "score": 1.1733574273432998e-7,
       "tags": [
         {
           "relativePath": "src/hooks/usePlaythroughSound.ts",
@@ -487,38 +516,9 @@
       "pathOnly": false
     },
     {
-      "relativePath": "src/hooks/useDeviceDetection.ts",
-      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
-      "score": 0.037243934388622675,
-      "tags": [
-        {
-          "relativePath": "src/hooks/useDeviceDetection.ts",
-          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
-          "name": "useIsMobile",
-          "kind": "def",
-          "line": 2,
-          "language": "typescript"
-        },
-        {
-          "relativePath": "src/hooks/useDeviceDetection.ts",
-          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
-          "name": "useTouchDevice",
-          "kind": "def",
-          "line": 23,
-          "language": "typescript"
-        }
-      ],
-      "includedLines": [
-        2,
-        23
-      ],
-      "isSpecialFile": false,
-      "pathOnly": false
-    },
-    {
       "relativePath": "src/components/UI/MiniMap.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\MiniMap.tsx",
-      "score": 0.004942188124388792,
+      "score": 1.2877800656446776e-29,
       "tags": [
         {
           "relativePath": "src/components/UI/MiniMap.tsx",
@@ -556,7 +556,7 @@
     {
       "relativePath": "src/hooks/useAutoPlaythrough.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useAutoPlaythrough.ts",
-      "score": 0.0048790296675421,
+      "score": 7.46887174770729e-30,
       "tags": [
         {
           "relativePath": "src/hooks/useAutoPlaythrough.ts",
@@ -594,7 +594,7 @@
     {
       "relativePath": "src/components/Scene/ProjectNode.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ProjectNode.tsx",
-      "score": 0.004508569377699099,
+      "score": 2.467801902175349e-31,
       "tags": [
         {
           "relativePath": "src/components/Scene/ProjectNode.tsx",
@@ -623,7 +623,7 @@
     {
       "relativePath": "src/components/UI/Timeline.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\Timeline.tsx",
-      "score": 0.0029956557000501683,
+      "score": 9.367531565010792e-40,
       "tags": [
         {
           "relativePath": "src/components/UI/Timeline.tsx",
@@ -652,7 +652,7 @@
     {
       "relativePath": "src/components/Scene/CameraController.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\CameraController.tsx",
-      "score": 0.0026225744476817774,
+      "score": 9.446943386506335e-43,
       "tags": [
         {
           "relativePath": "src/components/Scene/CameraController.tsx",
@@ -681,7 +681,7 @@
     {
       "relativePath": "src/components/Scene/DendriticStructure.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriticStructure.tsx",
-      "score": 0.002399518818520535,
+      "score": 8.08797106188524e-45,
       "tags": [
         {
           "relativePath": "src/components/Scene/DendriticStructure.tsx",
@@ -710,7 +710,7 @@
     {
       "relativePath": "AUDIO_UPDATE.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\AUDIO_UPDATE.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -719,7 +719,7 @@
     {
       "relativePath": "CLEANUP_CHANGES.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\CLEANUP_CHANGES.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -728,7 +728,7 @@
     {
       "relativePath": "DEPLOYMENT.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\DEPLOYMENT.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -737,7 +737,7 @@
     {
       "relativePath": "DEVELOPMENT_SUMMARY.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\DEVELOPMENT_SUMMARY.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -746,7 +746,7 @@
     {
       "relativePath": "ENHANCEMENTS_SUMMARY.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\ENHANCEMENTS_SUMMARY.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -755,7 +755,7 @@
     {
       "relativePath": "eslint.config.js",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\eslint.config.js",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -764,7 +764,7 @@
     {
       "relativePath": "FEATURES_GUIDE.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\FEATURES_GUIDE.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -773,7 +773,7 @@
     {
       "relativePath": "index.html",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\index.html",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -782,7 +782,7 @@
     {
       "relativePath": "nikitakondrashev-cinematic-space-510707.mp3",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\nikitakondrashev-cinematic-space-510707.mp3",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -791,7 +791,7 @@
     {
       "relativePath": "PHASE1_COMPLETE.md",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\PHASE1_COMPLETE.md",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -800,7 +800,7 @@
     {
       "relativePath": "public/favicon.svg",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\favicon.svg",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -809,7 +809,7 @@
     {
       "relativePath": "public/icons.svg",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\icons.svg",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -818,7 +818,7 @@
     {
       "relativePath": "public/resume.pdf",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\resume.pdf",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -827,7 +827,7 @@
     {
       "relativePath": "public/space-music-v2.mp3",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\space-music-v2.mp3",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -836,7 +836,7 @@
     {
       "relativePath": "src/App.css",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.css",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -845,7 +845,7 @@
     {
       "relativePath": "src/assets/hero.png",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\hero.png",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -854,7 +854,7 @@
     {
       "relativePath": "src/assets/react.svg",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\react.svg",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -863,7 +863,7 @@
     {
       "relativePath": "src/assets/vite.svg",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\vite.svg",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -872,7 +872,7 @@
     {
       "relativePath": "src/data/about.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\about.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -881,7 +881,7 @@
     {
       "relativePath": "src/data/branches.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\branches.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -890,7 +890,7 @@
     {
       "relativePath": "src/data/contact.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\contact.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -899,7 +899,7 @@
     {
       "relativePath": "src/data/projects.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\projects.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -908,7 +908,7 @@
     {
       "relativePath": "src/data/skills.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\skills.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -917,7 +917,7 @@
     {
       "relativePath": "src/index.css",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\index.css",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -926,7 +926,7 @@
     {
       "relativePath": "src/main.tsx",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\main.tsx",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -935,7 +935,7 @@
     {
       "relativePath": "src/shaders/dendriteGlow/fragment.glsl",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\dendriteGlow\\fragment.glsl",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -944,7 +944,7 @@
     {
       "relativePath": "src/shaders/dendriteGlow/vertex.glsl",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\dendriteGlow\\vertex.glsl",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -953,7 +953,7 @@
     {
       "relativePath": "src/shaders/holographicGrid/fragment.glsl",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\holographicGrid\\fragment.glsl",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -962,7 +962,7 @@
     {
       "relativePath": "src/shaders/holographicGrid/vertex.glsl",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\holographicGrid\\vertex.glsl",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -971,7 +971,7 @@
     {
       "relativePath": "src/styles/globals.css",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\styles\\globals.css",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -980,7 +980,7 @@
     {
       "relativePath": "src/styles/mobile.css",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\styles\\mobile.css",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -989,7 +989,7 @@
     {
       "relativePath": "tsconfig.app.json",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\tsconfig.app.json",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -998,7 +998,7 @@
     {
       "relativePath": "tsconfig.node.json",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\tsconfig.node.json",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,
@@ -1007,7 +1007,7 @@
     {
       "relativePath": "vite.config.ts",
       "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\vite.config.ts",
-      "score": 0.005586599431767263,
+      "score": 0,
       "tags": [],
       "includedLines": [],
       "isSpecialFile": false,

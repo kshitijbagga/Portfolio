@@ -20,11 +20,6 @@ export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       style={{
-        position: 'absolute',
-        bottom: '16px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 10,
         display: 'flex',
         alignItems: 'center',
         gap: '0',
@@ -33,7 +28,7 @@ export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
         borderRadius: '6px',
         padding: '12px 20px',
         backdropFilter: 'blur(8px)',
-        maxWidth: '95vw',
+        maxWidth: '90vw',
         overflowX: 'auto',
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
       }}

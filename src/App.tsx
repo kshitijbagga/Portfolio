@@ -374,7 +374,9 @@ export default function App() {
       {!playthrough.isPlaying && (
         <>
           <ProjectCard project={selectedProject} onClose={() => setSelectedId(null)} />
-          <Timeline activeStage={activeStage} onStageClick={goToStage} />
+          <div style={{ position: 'fixed', bottom: '16px', left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 10 }}>
+            <Timeline activeStage={activeStage} onStageClick={goToStage} />
+          </div>
           <MiniMap cameraX={camX} cameraZ={camZ} activeStage={activeStage} />
         </>
       )}

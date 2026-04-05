@@ -39,11 +39,6 @@ src/hooks/useCameraAnimation.ts:
    19	export function useCameraAnimation() {
    20	  const [activeStage, setActiveStage] = useState<ActiveStage>('all');
 
-src/App.tsx:
-   30	
-   31	export default function App() {
-   32	  const [selectedId, setSelectedId] = useState<string | null>(null);
-
 src/components/Scene/DendriteGlow.tsx:
    76	
    77	interface DendriteGlowProps {
@@ -56,6 +51,20 @@ src/components/Scene/DendriteGlow.tsx:
    91	
    92	export default function DendriteGlow({ 
    93	  position = [0, 0, 0], 
+
+src/hooks/useDeviceDetection.ts:
+    2	
+    3	export function useIsMobile() {
+    4	  const [isMobile, setIsMobile] = useState(false);
+...
+   23	
+   24	export function useTouchDevice() {
+   25	  const [isTouch, setIsTouch] = useState(false);
+
+src/App.tsx:
+   30	
+   31	export default function App() {
+   32	  const [selectedId, setSelectedId] = useState<string | null>(null);
 
 src/components/Scene/Nucleus.tsx:
     4	
@@ -133,15 +142,6 @@ src/hooks/usePlaythroughSound.ts:
     7	
     8	export function usePlaythroughSound(options: SoundOptions = {}) {
     9	  const { enabled = true, volume = 0.5 } = options;
-
-src/hooks/useDeviceDetection.ts:
-    2	
-    3	export function useIsMobile() {
-    4	  const [isMobile, setIsMobile] = useState(false);
-...
-   23	
-   24	export function useTouchDevice() {
-   25	  const [isTouch, setIsTouch] = useState(false);
 
 src/components/UI/MiniMap.tsx:
    10	
