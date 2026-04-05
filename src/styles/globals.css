@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Rajdhani:wght@500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Background Colors - Pure Black Theme */
+  --bg-void: #000000;
+  --bg-lab: #0a0a0a;
+  --bg-surface: #111111;
+
+  /* Accent Colors */
+  --accent-dendrite: #00f0ff;
+  --accent-growth: #ff006e;
+  --accent-nucleus: #8338ec;
+  --accent-converge: #00ff87;
+
+  /* Grid & Lattice */
+  --lattice-grid: rgba(0, 240, 255, 0.06);
+  --lattice-nodes: rgba(131, 56, 236, 0.2);
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-label: #666666;
+
+  /* Glow Effects */
+  --glow-intense: rgba(0, 240, 255, 0.5);
+  --glow-subtle: rgba(0, 240, 255, 0.1);
+
+  /* Shadows */
+  --shadow-glow: 0 0 30px var(--glow-intense);
+  --shadow-depth: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  cursor: crosshair;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pure black background with subtle gradient */
+.holographic-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(10, 10, 10, 0.4) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle starfield effect */
+.holographic-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.25), transparent),
+    radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 230px 80px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 350px 200px;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+/* Subtle nebula glow effect */
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(131, 56, 236, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+  animation: nebula-pulse 15s ease-in-out infinite;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.6; }
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: 'Orbitron', sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+.font-label {
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Glow text */
+.text-glow {
+  text-shadow:
+    0 0 10px var(--glow-intense),
+    0 0 25px var(--glow-subtle);
+}
+
+/* Loading screen */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-void);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 9999;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 2px solid var(--lattice-grid);
+  border-top-color: var(--accent-dendrite);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: var(--shadow-glow);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

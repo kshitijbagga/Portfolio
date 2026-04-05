@@ -1,0 +1,101 @@
+/* Mobile Responsiveness Styles */
+
+/* Base mobile breakpoints */
+@media (max-width: 768px) {
+  /* Hide hints on mobile */
+  .font-label {
+    font-size: 9px !important;
+  }
+  
+  /* Larger touch targets */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Adjust header for mobile */
+  header {
+    padding: 12px 16px !important;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Stack buttons vertically on small screens */
+  header > div:last-child {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Smaller modals on mobile */
+  [style*="width: '420px'"] {
+    width: 90vw !important;
+    max-width: 400px;
+  }
+  
+  /* Adjust project card for mobile */
+  [style*="width: 'min(560px, 90vw)'"] {
+    width: 95vw !important;
+    padding: 20px 16px !important;
+  }
+  
+  /* Timeline responsive */
+  [style*="bottom: '24px'"] {
+    bottom: 12px !important;
+    padding: 8px 12px !important;
+    max-width: 95vw;
+    overflow-x: auto;
+  }
+  
+  /* MiniMap smaller on mobile */
+  [style*="width: '130px'"] {
+    width: 100px !important;
+    height: 100px !important;
+    bottom: 12px !important;
+    right: 12px !important;
+  }
+  
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    *:hover {
+      /* Override hover styles */
+    }
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+  /* Slightly smaller UI elements */
+  [style*="width: '420px'"] {
+    width: 380px !important;
+  }
+}
+
+/* Touch-friendly spacing */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase spacing between interactive elements */
+  button, a {
+    margin: 4px;
+  }
+  
+  /* Larger tooltips */
+  [style*="padding: '8px 12px'"] {
+    padding: 12px 16px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Prevent zoom on double-tap */
+* {
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on UI elements */
+button, .timeline, .minimap {
+  user-select: none;
+  -webkit-user-select: none;
+}

@@ -1,0 +1,1017 @@
+{
+  "workspaceRoot": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio",
+  "metadata": {
+    "generatedAt": 1775379433836,
+    "maxTokens": 16384,
+    "usedTokens": 1692,
+    "fileCount": 60,
+    "includedEntryCount": 60,
+    "refreshMode": "auto",
+    "markdownPath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\.xyton\\repomap.md",
+    "jsonPath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\.xyton\\repomap.json",
+    "cacheDirectory": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\.xyton\\repomap-cache-v1"
+  },
+  "cacheStats": {
+    "hits": 19,
+    "misses": 9,
+    "deleted": 0,
+    "corrupted": 0,
+    "unsupported": 32
+  },
+  "entries": [
+    {
+      "relativePath": ".gitignore",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\.gitignore",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "package-lock.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\package-lock.json",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "package.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\package.json",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "README.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\README.md",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "tsconfig.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\tsconfig.json",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "vercel.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\vercel.json",
+      "score": 4503599627370495.5,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": true,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/types/index.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+      "score": 5.333442851560437e-7,
+      "tags": [
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "ProjectCategory",
+          "kind": "def",
+          "line": 0,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "Stage",
+          "kind": "def",
+          "line": 1,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "NodeSize",
+          "kind": "def",
+          "line": 2,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "Project",
+          "kind": "def",
+          "line": 4,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "DendriticBranch",
+          "kind": "def",
+          "line": 34,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/types/index.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\types\\index.ts",
+          "name": "CameraTarget",
+          "kind": "def",
+          "line": 43,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        0,
+        1,
+        2,
+        4,
+        34,
+        43
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/hooks/useCameraAnimation.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useCameraAnimation.ts",
+      "score": 5.22677399452925e-7,
+      "tags": [
+        {
+          "relativePath": "src/hooks/useCameraAnimation.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useCameraAnimation.ts",
+          "name": "CameraTarget",
+          "kind": "def",
+          "line": 3,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useCameraAnimation.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useCameraAnimation.ts",
+          "name": "ActiveStage",
+          "kind": "def",
+          "line": 8,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useCameraAnimation.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useCameraAnimation.ts",
+          "name": "useCameraAnimation",
+          "kind": "def",
+          "line": 18,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        3,
+        8,
+        18
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/DendriteGlow.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriteGlow.tsx",
+      "score": 1.1733574273433056e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/DendriteGlow.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriteGlow.tsx",
+          "name": "DendriteGlowProps",
+          "kind": "def",
+          "line": 76,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/DendriteGlow.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriteGlow.tsx",
+          "name": "IntrinsicElements",
+          "kind": "def",
+          "line": 85,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/DendriteGlow.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriteGlow.tsx",
+          "name": "DendriteGlow",
+          "kind": "def",
+          "line": 91,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        76,
+        85,
+        91
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/hooks/useDeviceDetection.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+      "score": 1.1733574273433007e-7,
+      "tags": [
+        {
+          "relativePath": "src/hooks/useDeviceDetection.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+          "name": "useIsMobile",
+          "kind": "def",
+          "line": 2,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useDeviceDetection.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useDeviceDetection.ts",
+          "name": "useTouchDevice",
+          "kind": "def",
+          "line": 23,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        2,
+        23
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/App.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
+      "score": 1.1733574273433006e-7,
+      "tags": [
+        {
+          "relativePath": "src/App.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.tsx",
+          "name": "App",
+          "kind": "def",
+          "line": 30,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        30
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/Nucleus.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\Nucleus.tsx",
+      "score": 1.1733574273433006e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/Nucleus.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\Nucleus.tsx",
+          "name": "Nucleus",
+          "kind": "def",
+          "line": 4,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        4
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/HolographicGrid.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\HolographicGrid.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/HolographicGrid.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\HolographicGrid.tsx",
+          "name": "HolographicGridProps",
+          "kind": "def",
+          "line": 78,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/HolographicGrid.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\HolographicGrid.tsx",
+          "name": "HolographicGrid",
+          "kind": "def",
+          "line": 87,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        78,
+        87
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/ParticleSystem.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ParticleSystem.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/ParticleSystem.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ParticleSystem.tsx",
+          "name": "ParticleSystemProps",
+          "kind": "def",
+          "line": 4,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/ParticleSystem.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ParticleSystem.tsx",
+          "name": "ParticleSystem",
+          "kind": "def",
+          "line": 10,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        4,
+        10
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/AboutModal.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\AboutModal.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/AboutModal.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\AboutModal.tsx",
+          "name": "AboutModalProps",
+          "kind": "def",
+          "line": 3,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/AboutModal.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\AboutModal.tsx",
+          "name": "AboutModal",
+          "kind": "def",
+          "line": 8,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        3,
+        8
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/ContactModal.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ContactModal.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/ContactModal.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ContactModal.tsx",
+          "name": "ContactModalProps",
+          "kind": "def",
+          "line": 3,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/ContactModal.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ContactModal.tsx",
+          "name": "ContactModal",
+          "kind": "def",
+          "line": 8,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        3,
+        8
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/PlaythroughOverlay.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\PlaythroughOverlay.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/PlaythroughOverlay.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\PlaythroughOverlay.tsx",
+          "name": "PlaythroughOverlayProps",
+          "kind": "def",
+          "line": 2,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/PlaythroughOverlay.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\PlaythroughOverlay.tsx",
+          "name": "PlaythroughOverlay",
+          "kind": "def",
+          "line": 10,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        2,
+        10
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/ProjectCard.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ProjectCard.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/ProjectCard.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ProjectCard.tsx",
+          "name": "ProjectCardProps",
+          "kind": "def",
+          "line": 4,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/ProjectCard.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\ProjectCard.tsx",
+          "name": "ProjectCard",
+          "kind": "def",
+          "line": 9,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        4,
+        9
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/SkillsPanel.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\SkillsPanel.tsx",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/SkillsPanel.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\SkillsPanel.tsx",
+          "name": "SkillsPanelProps",
+          "kind": "def",
+          "line": 3,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/SkillsPanel.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\SkillsPanel.tsx",
+          "name": "SkillsPanel",
+          "kind": "def",
+          "line": 8,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        3,
+        8
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/hooks/usePlaythroughSound.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\usePlaythroughSound.ts",
+      "score": 1.1733574273432998e-7,
+      "tags": [
+        {
+          "relativePath": "src/hooks/usePlaythroughSound.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\usePlaythroughSound.ts",
+          "name": "SoundOptions",
+          "kind": "def",
+          "line": 2,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/usePlaythroughSound.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\usePlaythroughSound.ts",
+          "name": "usePlaythroughSound",
+          "kind": "def",
+          "line": 7,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        2,
+        7
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/MiniMap.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\MiniMap.tsx",
+      "score": 1.2877800656446776e-29,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/MiniMap.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\MiniMap.tsx",
+          "name": "worldToMap",
+          "kind": "def",
+          "line": 10,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/MiniMap.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\MiniMap.tsx",
+          "name": "MiniMapProps",
+          "kind": "def",
+          "line": 16,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/MiniMap.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\MiniMap.tsx",
+          "name": "MiniMap",
+          "kind": "def",
+          "line": 23,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        10,
+        16,
+        23
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/hooks/useAutoPlaythrough.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useAutoPlaythrough.ts",
+      "score": 7.46887174770729e-30,
+      "tags": [
+        {
+          "relativePath": "src/hooks/useAutoPlaythrough.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useAutoPlaythrough.ts",
+          "name": "PlaythroughBeat",
+          "kind": "def",
+          "line": 4,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useAutoPlaythrough.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useAutoPlaythrough.ts",
+          "name": "PlaythroughState",
+          "kind": "def",
+          "line": 82,
+          "language": "typescript"
+        },
+        {
+          "relativePath": "src/hooks/useAutoPlaythrough.ts",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\hooks\\useAutoPlaythrough.ts",
+          "name": "useAutoPlaythrough",
+          "kind": "def",
+          "line": 92,
+          "language": "typescript"
+        }
+      ],
+      "includedLines": [
+        4,
+        82,
+        92
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/ProjectNode.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ProjectNode.tsx",
+      "score": 2.467801902175349e-31,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/ProjectNode.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ProjectNode.tsx",
+          "name": "ProjectNodeProps",
+          "kind": "def",
+          "line": 20,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/ProjectNode.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\ProjectNode.tsx",
+          "name": "ProjectNode",
+          "kind": "def",
+          "line": 27,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        20,
+        27
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/UI/Timeline.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\Timeline.tsx",
+      "score": 9.367531565010792e-40,
+      "tags": [
+        {
+          "relativePath": "src/components/UI/Timeline.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\Timeline.tsx",
+          "name": "TimelineProps",
+          "kind": "def",
+          "line": 10,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/UI/Timeline.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\UI\\Timeline.tsx",
+          "name": "Timeline",
+          "kind": "def",
+          "line": 15,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        10,
+        15
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/CameraController.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\CameraController.tsx",
+      "score": 9.446943386506335e-43,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/CameraController.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\CameraController.tsx",
+          "name": "CameraControllerProps",
+          "kind": "def",
+          "line": 5,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/CameraController.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\CameraController.tsx",
+          "name": "CameraController",
+          "kind": "def",
+          "line": 12,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        5,
+        12
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "src/components/Scene/DendriticStructure.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriticStructure.tsx",
+      "score": 8.08797106188524e-45,
+      "tags": [
+        {
+          "relativePath": "src/components/Scene/DendriticStructure.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriticStructure.tsx",
+          "name": "DendriticStructureProps",
+          "kind": "def",
+          "line": 11,
+          "language": "tsx"
+        },
+        {
+          "relativePath": "src/components/Scene/DendriticStructure.tsx",
+          "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\components\\Scene\\DendriticStructure.tsx",
+          "name": "DendriticStructure",
+          "kind": "def",
+          "line": 21,
+          "language": "tsx"
+        }
+      ],
+      "includedLines": [
+        11,
+        21
+      ],
+      "isSpecialFile": false,
+      "pathOnly": false
+    },
+    {
+      "relativePath": "AUDIO_UPDATE.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\AUDIO_UPDATE.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "CLEANUP_CHANGES.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\CLEANUP_CHANGES.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "DEPLOYMENT.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\DEPLOYMENT.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "DEVELOPMENT_SUMMARY.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\DEVELOPMENT_SUMMARY.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "ENHANCEMENTS_SUMMARY.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\ENHANCEMENTS_SUMMARY.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "eslint.config.js",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\eslint.config.js",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "FEATURES_GUIDE.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\FEATURES_GUIDE.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "index.html",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\index.html",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "nikitakondrashev-cinematic-space-510707.mp3",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\nikitakondrashev-cinematic-space-510707.mp3",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "PHASE1_COMPLETE.md",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\PHASE1_COMPLETE.md",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "public/favicon.svg",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\favicon.svg",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "public/icons.svg",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\icons.svg",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "public/resume.pdf",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\resume.pdf",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "public/space-music-v2.mp3",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\public\\space-music-v2.mp3",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/App.css",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\App.css",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/assets/hero.png",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\hero.png",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/assets/react.svg",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\react.svg",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/assets/vite.svg",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\assets\\vite.svg",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/data/about.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\about.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/data/branches.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\branches.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/data/contact.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\contact.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/data/projects.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\projects.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/data/skills.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\data\\skills.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/index.css",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\index.css",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/main.tsx",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\main.tsx",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/shaders/dendriteGlow/fragment.glsl",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\dendriteGlow\\fragment.glsl",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/shaders/dendriteGlow/vertex.glsl",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\dendriteGlow\\vertex.glsl",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/shaders/holographicGrid/fragment.glsl",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\holographicGrid\\fragment.glsl",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/shaders/holographicGrid/vertex.glsl",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\shaders\\holographicGrid\\vertex.glsl",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/styles/globals.css",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\styles\\globals.css",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "src/styles/mobile.css",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\src\\styles\\mobile.css",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "tsconfig.app.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\tsconfig.app.json",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "tsconfig.node.json",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\tsconfig.node.json",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    },
+    {
+      "relativePath": "vite.config.ts",
+      "absolutePath": "c:\\Users\\Kshitij Bagga\\Desktop\\Portfolio\\vite.config.ts",
+      "score": 0,
+      "tags": [],
+      "includedLines": [],
+      "isSpecialFile": false,
+      "pathOnly": true
+    }
+  ]
+}
