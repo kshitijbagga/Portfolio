@@ -21,7 +21,7 @@ export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
       transition={{ duration: 0.5 }}
       style={{
         position: 'absolute',
-        bottom: '24px',
+        bottom: '16px',
         left: '50%',
         transform: 'translateX(-50%)',
         zIndex: 10,

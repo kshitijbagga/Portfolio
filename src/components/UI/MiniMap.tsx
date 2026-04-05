@@ -41,7 +41,7 @@ export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps)
       transition={{ duration: 0.4 }}
       style={{
         position: 'absolute',
-        bottom: '24px',
+        bottom: '16px',
         right: '24px',
         zIndex: 10,
         width: `${MAP_SIZE}px`,
