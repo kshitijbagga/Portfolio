@@ -7,7 +7,7 @@ interface PlaythroughButtonProps {
 }
 
 export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughButtonProps) {
-  const [isExiting, setIsExiting] = useState(false);
+  const [_isExiting, setIsExiting] = useState(false);
 
   if (isPlaying) {
     return null; // Hide button during playthrough
