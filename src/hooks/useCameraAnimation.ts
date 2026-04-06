@@ -9,11 +9,11 @@ export interface CameraTarget {
 export type ActiveStage = Stage | 'all';
 
 export const STAGE_CAMERAS: Record<ActiveStage, CameraTarget> = {
-  all:         { position: [8, 5, 12],  lookAt: [0, 4, 0] },
+  all:         { position: [10, 6, 15], lookAt: [0, 6, 0] },
   nucleation:  { position: [3, 1, 4],   lookAt: [0, 0, 0] },
-  primary:     { position: [5, 4, 7],   lookAt: [0, 2.5, 0] },
-  secondary:   { position: [6, 6, 9],   lookAt: [0, 5.5, 0] },
-  convergence: { position: [4, 10, 5],  lookAt: [0, 8, 0] },
+  primary:     { position: [6, 5, 9],   lookAt: [0, 4, 0] },
+  secondary:   { position: [7, 8, 11],  lookAt: [0, 8, 0] },
+  convergence: { position: [5, 13, 6],  lookAt: [0, 12, 0] },
 };
 
 export function useCameraAnimation() {

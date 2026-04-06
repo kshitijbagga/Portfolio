@@ -14,7 +14,7 @@ export interface PlaythroughBeat {
 export const BEATS: PlaythroughBeat[] = [
   {
     time: 0,
-    camera: { position: [12, 4, 16], lookAt: [0, 2, 0] },
+    camera: { position: [6, 2.5, 8], lookAt: [0, 4, 0] },
     revealedStages: [],
     focusStage: null,
     headline: 'KSHITIJ BAGGA',
@@ -30,7 +30,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 9,
-    camera: { position: [-4, 3.5, 5], lookAt: [-2, 2.5, 1] },
+    camera: { position: [6, 5, 9], lookAt: [0, 4, 0] },
     revealedStages: ['nucleation', 'primary'],
     focusStage: 'primary',
     headline: 'PRIMARY GROWTH',
@@ -38,7 +38,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 16,
-    camera: { position: [5, 6, 9], lookAt: [0, 5, 0] },
+    camera: { position: [6, 8, 10], lookAt: [0, 8, 0] },
     revealedStages: ['nucleation', 'primary', 'secondary'],
     focusStage: 'secondary',
     headline: 'SECONDARY BRANCHING',
@@ -46,7 +46,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 24,
-    camera: { position: [-2, 5.5, -3], lookAt: [-1, 5.5, -1] },
+    camera: { position: [-3, 9, -4], lookAt: [-2, 8.5, -2] },
     revealedStages: ['nucleation', 'primary', 'secondary'],
     focusStage: 'secondary',
     headline: 'THE PIVOT',
@@ -54,7 +54,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 30,
-    camera: { position: [4, 10, 6], lookAt: [0, 8, 0] },
+    camera: { position: [4, 13, 6], lookAt: [0, 12, 0] },
     revealedStages: ['nucleation', 'primary', 'secondary', 'convergence'],
     focusStage: 'convergence',
     headline: 'CONVERGENCE',
@@ -62,7 +62,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 37,
-    camera: { position: [2, 9, 3], lookAt: [0, 8, 0] },
+    camera: { position: [2, 13, 4], lookAt: [0, 12, 0] },
     revealedStages: ['nucleation', 'primary', 'secondary', 'convergence'],
     focusStage: 'convergence',
     headline: 'ML ENGINEER · XYTON',
@@ -70,7 +70,7 @@ export const BEATS: PlaythroughBeat[] = [
   },
   {
     time: 43,
-    camera: { position: [8, 5, 12], lookAt: [0, 4, 0] },
+    camera: { position: [10, 6, 15], lookAt: [0, 6, 0] },
     revealedStages: ['nucleation', 'primary', 'secondary', 'convergence'],
     focusStage: null,
     headline: '',
@@ -82,17 +82,20 @@ const TOTAL_DURATION = 48; // seconds
 
 export interface PlaythroughState {
   isPlaying: boolean;
+  hasStarted: boolean;
   beat: PlaythroughBeat;
   beatIndex: number;
   progress: number;
   textVisible: boolean;
   focusStage: Stage | null;
   skip: () => void;
+  start: () => void;
 }
 
 export function useAutoPlaythrough(): PlaythroughState {
   const [elapsed, setElapsed]       = useState(0);
-  const [isPlaying, setIsPlaying]   = useState(true);
+  const [isPlaying, setIsPlaying]   = useState(false); // Changed to false - manual start
+  const [hasStarted, setHasStarted] = useState(false);
   const lastTimestamp               = useRef<number | null>(null);
   const rafId                       = useRef<number>(0);
 
@@ -126,6 +129,15 @@ export function useAutoPlaythrough(): PlaythroughState {
     setElapsed(TOTAL_DURATION);
   }, []);
 
+  const start = useCallback(() => {
+    if (!isPlaying && !hasStarted) {
+      setHasStarted(true);
+      setElapsed(0);
+      setIsPlaying(true);
+      lastTimestamp.current = null;
+    }
+  }, [isPlaying, hasStarted]);
+
   // Find current beat
   let beatIndex = 0;
   for (let i = BEATS.length - 1; i >= 0; i--) {
@@ -142,11 +154,13 @@ export function useAutoPlaythrough(): PlaythroughState {
 
   return {
     isPlaying,
+    hasStarted,
     beat,
     beatIndex,
     progress: elapsed / TOTAL_DURATION,
     textVisible,
     focusStage: beat.focusStage,
     skip,
+    start,
   };
 }
