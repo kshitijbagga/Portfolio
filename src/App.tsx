@@ -11,6 +11,10 @@ import PlaythroughOverlay from './components/UI/PlaythroughOverlay';
 import ContactModal from './components/UI/ContactModal';
 import AboutModal from './components/UI/AboutModal';
 import SkillsPanel from './components/UI/SkillsPanel';
+import ClickToStartOverlay from './components/UI/ClickToStartOverlay';
+import PlaythroughButton from './components/UI/PlaythroughButton';
+import LegendPanel from './components/UI/LegendPanel';
+import ProjectsIndex from './components/UI/ProjectsIndex';
 import { projects } from './data/projects';
 import { branches } from './data/branches';
 import { useCameraAnimation } from './hooks/useCameraAnimation';
@@ -32,7 +36,7 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [camX, setCamX]             = useState(12);
   const [camZ, setCamZ]             = useState(16);
-  const [audioEnabled, setAudioEnabled] = useState(false);
+  const [audioEnabled, setAudioEnabled] = useState(true);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
@@ -59,57 +63,75 @@ export default function App() {
     setCamZ(z);
   }, []);
 
-  // Request fullscreen on first user interaction
-  useEffect(() => {
-    const requestFullscreen = () => {
-      const doc = window.document as any;
-      const de = doc.documentElement;
-      
-      // Try to enter fullscreen
+  // Fullscreen handling
+  const enterFullscreen = async () => {
+    const doc = window.document as any;
+    const de = doc.documentElement;
+    
+    try {
       if (de.requestFullscreen) {
-        de.requestFullscreen().catch((err: any) => console.log('Fullscreen denied:', err));
+        await de.requestFullscreen();
       } else if (de.webkitRequestFullscreen) {
-        de.webkitRequestFullscreen();
+        await de.webkitRequestFullscreen();
       } else if (de.msRequestFullscreen) {
-        de.msRequestFullscreen();
+        await de.msRequestFullscreen();
       }
-      
-      // Remove listeners after first interaction
-      window.removeEventListener('click', requestFullscreen);
-      window.removeEventListener('keydown', requestFullscreen);
-    };
-    
-    window.addEventListener('click', requestFullscreen, { once: true });
-    window.addEventListener('keydown', requestFullscreen, { once: true });
-    
-    return () => {
-      window.removeEventListener('click', requestFullscreen);
-      window.removeEventListener('keydown', requestFullscreen);
-    };
-  }, []);
+    } catch (err) {
+      console.log('Fullscreen denied:', err);
+    }
+  };
 
-  // Initialize audio on first user interaction (only once)
+  const exitFullscreen = async () => {
+    const doc = window.document as any;
+    
+    try {
+      if (doc.exitFullscreen) {
+        await doc.exitFullscreen();
+      } else if (doc.webkitExitFullscreen) {
+        await doc.webkitExitFullscreen();
+      } else if (doc.msExitFullscreen) {
+        await doc.msExitFullscreen();
+      }
+    } catch (err) {
+      console.log('Exit fullscreen error:', err);
+    }
+  };
+
+  // Handle first interaction for audio
+  const handleFirstInteraction = useCallback(() => {
+    sound.initAudio();
+    setAudioEnabled(true);
+    // Start audio immediately
+    sound.startAmbientDrone();
+  }, [sound]);
+
+  // Start playthrough manually
+  const startPlaythrough = useCallback(() => {
+    enterFullscreen();
+    sound.initAudio();
+    setAudioEnabled(true);
+    playthrough.start();
+    setTimeout(() => {
+      if (!sound.isPlaying) {
+        sound.startAmbientDrone();
+      }
+    }, 100);
+  }, [playthrough, sound]);
+
+  // Exit fullscreen when playthrough ends
   useEffect(() => {
-    const initAudioOnInteraction = () => {
-      sound.initAudio();
-      setAudioEnabled(true);
+    if (!playthrough.isPlaying && !playthrough.hasStarted) {
+      // Don't exit if playthrough never started
+      return;
+    }
+    
+    if (!playthrough.isPlaying && playthrough.hasStarted) {
+      // Playthrough just ended
       setTimeout(() => {
-        if (!sound.isPlaying) {
-          sound.startAmbientDrone();
-        }
-      }, 50);
-      window.removeEventListener('click', initAudioOnInteraction);
-      window.removeEventListener('keydown', initAudioOnInteraction);
-    };
-
-    window.addEventListener('click', initAudioOnInteraction, { once: true });
-    window.addEventListener('keydown', initAudioOnInteraction, { once: true });
-
-    return () => {
-      window.removeEventListener('click', initAudioOnInteraction);
-      window.removeEventListener('keydown', initAudioOnInteraction);
-    };
-  }, []);
+        exitFullscreen();
+      }, 1000);
+    }
+  }, [playthrough.isPlaying, playthrough.hasStarted]);
 
   // Keyboard shortcuts — only active after playthrough
   useEffect(() => {
@@ -299,7 +321,7 @@ export default function App() {
         onClick={handleCanvasClick}
       >
         <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault position={[12, 4, 16]} fov={55} />
+          <PerspectiveCamera makeDefault position={[10, 6, 15]} fov={55} />
 
           <ambientLight intensity={0.3} color="#05080d" />
           <pointLight position={[10, 12, 8]}  intensity={20} color="#00f0ff" distance={35} decay={2} />
@@ -373,11 +395,23 @@ export default function App() {
 
       {!playthrough.isPlaying && (
         <>
+          <LegendPanel />
+          <ProjectsIndex onSelectProject={setSelectedId} />
           <ProjectCard project={selectedProject} onClose={() => setSelectedId(null)} />
-          <div style={{ position: 'fixed', bottom: '16px', left: 0, right: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 10 }}>
+          <div style={{ 
+            position: 'fixed', 
+            bottom: isMobile ? '12px' : '16px', 
+            left: 0, 
+            right: 0, 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            zIndex: 10 
+          }}>
             <Timeline activeStage={activeStage} onStageClick={goToStage} />
           </div>
           <MiniMap cameraX={camX} cameraZ={camZ} activeStage={activeStage} />
+          <PlaythroughButton onStart={startPlaythrough} isPlaying={playthrough.isPlaying} />
         </>
       )}
 
@@ -385,6 +419,9 @@ export default function App() {
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
       <SkillsPanel isOpen={isSkillsOpen} onClose={() => setIsSkillsOpen(false)} />
+      
+      {/* Click to start overlay */}
+      <ClickToStartOverlay onInteraction={handleFirstInteraction} />
     </div>
   );
 }

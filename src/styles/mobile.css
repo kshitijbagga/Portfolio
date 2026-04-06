@@ -1,5 +1,25 @@
 /* Mobile Responsiveness Styles */
 
+@media (max-width: 768px) {
+  /* Timeline adjustments for mobile */
+  .timeline-wrapper {
+    padding-bottom: 80px !important;
+  }
+  
+  /* Make timeline more compact on mobile */
+  :global([style*="bottom: 16px"]) {
+    bottom: 12px !important;
+  }
+}
+
+/* Ensure timeline doesn't overlap content on small screens */
+@media (max-width: 480px) {
+  /* Reduce padding on very small screens */
+  :global([style*="padding: 12px 20px"]) {
+    padding: 8px 12px !important;
+  }
+}
+
 /* Base mobile breakpoints */
 @media (max-width: 768px) {
   /* Hide hints on mobile */
@@ -98,4 +118,23 @@ html {
 button, .timeline, .minimap {
   user-select: none;
   -webkit-user-select: none;
+}
+
+/* Custom scrollbar for panels */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #818cf8, #c084fc);
 }
