@@ -43,7 +43,7 @@ export default function ProjectsIndex({ onSelectProject }: ProjectsIndexProps) {
           padding: '16px',
           backdropFilter: 'blur(10px)',
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
-          maxHeight: 'calc(100vh - 200px)',
+          maxHeight: 'calc(100vh - 280px)',
           overflowY: 'auto',
           overflowX: 'hidden',
         }}
