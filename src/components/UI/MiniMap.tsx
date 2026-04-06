@@ -2,9 +2,11 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
 import type { ActiveStage } from '../../hooks/useCameraAnimation';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 // Map world XZ coords → minimap pixel coords
 const MAP_SIZE = 130;
+const MAP_SIZE_MOBILE = 100;
 const WORLD_RANGE = 14; // world units visible (-7 to +7 in X and Z)
 const CENTER = MAP_SIZE / 2;
 
@@ -22,7 +24,9 @@ interface MiniMapProps {
 }
 
 export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps) {
+  const isMobile = useIsMobile();
   const [camPx, camPy] = worldToMap(cameraX, cameraZ);
+  const currentMapSize = isMobile ? MAP_SIZE_MOBILE : MAP_SIZE;
 
   const nodeData = useMemo(() =>
     projects.map((p) => {
@@ -40,12 +44,12 @@ export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps)
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
       style={{
-        position: 'absolute',
-        bottom: '16px',
-        right: '24px',
+        position: 'fixed',
+        bottom: isMobile ? '12px' : '16px',
+        right: isMobile ? '12px' : '24px',
         zIndex: 10,
-        width: `${MAP_SIZE}px`,
-        height: `${MAP_SIZE}px`,
+        width: `${currentMapSize}px`,
+        height: `${currentMapSize}px`,
         background: 'rgba(20, 20, 20, 0.88)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         borderRadius: '6px',
@@ -60,20 +64,20 @@ export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps)
         className="font-label"
         style={{
           position: 'absolute', top: '6px', left: '8px',
-          fontSize: '8px', color: 'rgba(255,255,255,0.3)',
+          fontSize: isMobile ? '7px' : '8px', color: 'rgba(255,255,255,0.3)',
           letterSpacing: '0.15em', zIndex: 2,
         }}
       >
         TOP VIEW
       </div>
 
-      <svg width={MAP_SIZE} height={MAP_SIZE} style={{ position: 'absolute', inset: 0 }}>
+      <svg width={currentMapSize} height={currentMapSize} style={{ position: 'absolute', inset: 0 }}>
         {/* Grid lines */}
-        <line x1={CENTER} y1={0} x2={CENTER} y2={MAP_SIZE} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-        <line x1={0} y1={CENTER} x2={MAP_SIZE} y2={CENTER} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+        <line x1={currentMapSize/2} y1={0} x2={currentMapSize/2} y2={currentMapSize} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+        <line x1={0} y1={currentMapSize/2} x2={currentMapSize} y2={currentMapSize/2} stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
 
         {/* Origin dot */}
-        <circle cx={CENTER} cy={CENTER} r={3} fill="#ffffff" opacity={0.3} />
+        <circle cx={currentMapSize/2} cy={currentMapSize/2} r={isMobile ? 2 : 3} fill="#ffffff" opacity={0.3} />
 
         {/* Project nodes */}
         {nodeData.map((n) => {
@@ -94,9 +98,9 @@ export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps)
 
         {/* Camera position crosshair */}
         <g transform={`translate(${camPx}, ${camPy})`}>
-          <circle r={5} fill="none" stroke="#00f0ff" strokeWidth="1" opacity={0.7} />
-          <line x1={-8} y1={0} x2={8} y2={0} stroke="#00f0ff" strokeWidth="0.75" opacity={0.5} />
-          <line x1={0} y1={-8} x2={0} y2={8} stroke="#00f0ff" strokeWidth="0.75" opacity={0.5} />
+          <circle r={isMobile ? 4 : 5} fill="none" stroke="#00f0ff" strokeWidth="1" opacity={0.7} />
+          <line x1={isMobile ? -6 : -8} y1={0} x2={isMobile ? 6 : 8} y2={0} stroke="#00f0ff" strokeWidth="0.75" opacity={0.5} />
+          <line x1={0} y1={isMobile ? -6 : -8} x2={0} y2={isMobile ? 6 : 8} stroke="#00f0ff" strokeWidth="0.75" opacity={0.5} />
         </g>
       </svg>
     </motion.div>

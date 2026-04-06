@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { ActiveStage } from '../../hooks/useCameraAnimation';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 const STAGES: { id: ActiveStage; label: string; year: string; color: string }[] = [
   { id: 'nucleation',  label: 'NUCLEATION',       year: '2022',     color: '#8338ec' },
@@ -14,6 +15,8 @@ interface TimelineProps {
 }
 
 export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
+  const isMobile = useIsMobile();
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,9 +29,9 @@ export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
         background: 'rgba(20, 20, 20, 0.85)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         borderRadius: '6px',
-        padding: '12px 20px',
+        padding: isMobile ? '8px 12px' : '12px 20px',
         backdropFilter: 'blur(8px)',
-        maxWidth: '90vw',
+        maxWidth: isMobile ? '95vw' : '90vw',
         overflowX: 'auto',
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
       }}
