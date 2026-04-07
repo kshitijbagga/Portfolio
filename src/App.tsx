@@ -1,9 +1,9 @@
 import { Suspense, useState, useEffect, useCallback } from 'react';
-import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion, AnimatePresence } from 'framer-motion';
 import DendriticStructure from './components/Scene/DendriticStructure';
 import CameraController from './components/Scene/CameraController';
+import SafeCanvas from './components/Scene/SafeCanvas';
 import ProjectCard from './components/UI/ProjectCard';
 import Timeline from './components/UI/Timeline';
 import MiniMap from './components/UI/MiniMap';
@@ -40,6 +40,7 @@ export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isSkillsOpen, setIsSkillsOpen] = useState(false);
+  const [webglError, setWebglError] = useState(false);
   
   const isMobile = useIsMobile();
   const selectedProject = projects.find((p) => p.id === selectedId) ?? null;
@@ -61,6 +62,12 @@ export default function App() {
   const handleCameraPos = useCallback((x: number, z: number) => {
     setCamX(x);
     setCamZ(z);
+  }, []);
+
+  // WebGL error handler
+  const handleContextLoss = useCallback(() => {
+    console.error('WebGL context lost - switching to fallback mode');
+    setWebglError(true);
   }, []);
 
   // Fullscreen handling
@@ -167,11 +174,11 @@ export default function App() {
   }, [playthrough.beatIndex, playthrough.isPlaying, sound]);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', position: 'relative', background: 'var(--bg-void)' }}>
+    <div style={{ width: '100vw', height: '100vh', position: 'relative', background: '#000000' }}>
       <div className="scan-line" />
 
       {/* Header */}
-      <div style={{
+      <header style={{
         position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10,
         padding: '20px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         background: 'linear-gradient(to bottom, rgba(5,8,13,0.8), transparent)',
@@ -188,9 +195,10 @@ export default function App() {
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '20px',
-              padding: '6px 14px',
+              padding: isMobile ? '8px 12px' : '6px 14px',
               cursor: 'pointer',
               transition: 'all 0.2s',
+              minHeight: '44px',
             }}
             className="font-label"
             onMouseEnter={(e) => {
@@ -202,7 +210,7 @@ export default function App() {
               e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
             }}
           >
-            <span style={{ fontSize: '10px', color: 'var(--text-primary)' }}>About</span>
+            <span style={{ fontSize: isMobile ? '11px' : '10px', color: 'var(--text-primary)' }}>About</span>
           </button>
 
           {/* Skills button */}
@@ -212,9 +220,10 @@ export default function App() {
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '20px',
-              padding: '6px 14px',
+              padding: isMobile ? '8px 12px' : '6px 14px',
               cursor: 'pointer',
               transition: 'all 0.2s',
+              minHeight: '44px',
             }}
             className="font-label"
             onMouseEnter={(e) => {
@@ -226,7 +235,7 @@ export default function App() {
               e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
             }}
           >
-            <span style={{ fontSize: '10px', color: 'var(--text-primary)' }}>Skills</span>
+            <span style={{ fontSize: isMobile ? '11px' : '10px', color: 'var(--text-primary)' }}>Skills</span>
           </button>
 
           {/* Contact button */}
@@ -236,9 +245,10 @@ export default function App() {
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.2)',
               borderRadius: '20px',
-              padding: '6px 14px',
+              padding: isMobile ? '8px 12px' : '6px 14px',
               cursor: 'pointer',
               transition: 'all 0.2s',
+              minHeight: '44px',
             }}
             className="font-label"
             onMouseEnter={(e) => {
@@ -272,12 +282,13 @@ export default function App() {
               background: audioEnabled ? 'rgba(0, 240, 255, 0.15)' : 'rgba(255, 255, 255, 0.05)',
               border: `1px solid ${audioEnabled ? '#00f0ff' : 'rgba(255, 255, 255, 0.2)'}`,
               borderRadius: '20px',
-              padding: '6px 14px',
+              padding: isMobile ? '8px 12px' : '6px 14px',
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
               transition: 'all 0.2s',
+              minHeight: '44px',
             }}
             className="font-label"
             onMouseEnter={(e) => {
@@ -292,71 +303,81 @@ export default function App() {
             <span style={{ fontSize: '16px', filter: audioEnabled ? 'none' : 'grayscale(100%)' }}>
               {audioEnabled ? '🔊' : '🔇'}
             </span>
-            <span style={{ fontSize: '10px', color: audioEnabled ? '#00f0ff' : 'var(--text-label)', fontWeight: audioEnabled ? 600 : 400 }}>
-              {audioEnabled ? 'On' : 'Off'}
-            </span>
+            {!isMobile && (
+              <span style={{ fontSize: '10px', color: audioEnabled ? '#00f0ff' : 'var(--text-label)', fontWeight: audioEnabled ? 600 : 400 }}>
+                {audioEnabled ? 'On' : 'Off'}
+              </span>
+            )}
           </button>
           
           {/* Hide hints during playthrough */}
           <AnimatePresence>
-            {!playthrough.isPlaying && (
+            {!playthrough.isPlaying && !isMobile && (
               <motion.div
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="font-label"
-                style={{ fontSize: isMobile ? '9px' : '10px', color: 'var(--text-label)', textAlign: 'right' }}
+                style={{ fontSize: '10px', color: 'var(--text-label)', textAlign: 'right' }}
               >
-                <div>{isMobile ? 'Touch & drag to orbit' : 'Drag to orbit · Scroll to zoom'}</div>
+                <div>Drag to orbit · Scroll to zoom</div>
                 <div style={{ marginTop: '2px' }}>Tap nodes to explore</div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-      </div>
+      </header>
 
       {/* 3D Canvas */}
-      <Canvas
-        gl={{ antialias: true, alpha: true }}
-        style={{ background: 'transparent' }}
-        dpr={[1, 2]}
-        onClick={handleCanvasClick}
-      >
-        <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault position={[10, 6, 15]} fov={55} />
+      {!webglError ? (
+        <SafeCanvas
+          onWebGLError={handleContextLoss}
+          gl={{ 
+            antialias: !isMobile,
+            alpha: false, 
+            preserveDrawingBuffer: false,
+            powerPreference: 'high-performance',
+            failIfMajorPerformanceCaveat: false,
+          }}
+          style={{ background: '#000000', width: '100%', height: '100%' }}
+          dpr={[1, Math.min(2, window.devicePixelRatio || 1)]}
+          onClick={handleCanvasClick}
+        >
+          <Suspense fallback={<div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: '#00f0ff', fontFamily: 'monospace' }}>Loading...</div>}>
+            <PerspectiveCamera makeDefault position={[12, 8, 18]} fov={50} />
 
-          <ambientLight intensity={0.3} color="#05080d" />
-          <pointLight position={[10, 12, 8]}  intensity={20} color="#00f0ff" distance={35} decay={2} />
-          <pointLight position={[-10, 6, -8]} intensity={15} color="#8338ec" distance={30} decay={2} />
-          <pointLight position={[0, 10, 0]}   intensity={10} color="#00ff87" distance={25} decay={2} />
+            <ambientLight intensity={0.4} color="#ffffff" />
+            <pointLight position={[10, 12, 8]}  intensity={25} color="#00f0ff" distance={35} decay={2} />
+            <pointLight position={[-10, 6, -8]} intensity={20} color="#8338ec" distance={30} decay={2} />
+            <pointLight position={[0, 10, 0]}   intensity={15} color="#00ff87" distance={25} decay={2} />
 
-          <DendriticStructure
-            projects={projects}
-            branches={branches}
-            activeStage={activeStage}
-            revealedStages={playthrough.isPlaying ? playthrough.beat.revealedStages : undefined}
-            focusStage={playthrough.isPlaying ? playthrough.focusStage : undefined}
-            onNodeHover={() => {}}
-            onNodeClick={(id) => {
-              if (!playthrough.isPlaying) {
-                setSelectedId(id);
-                sound.playClickSound();
-              }
-            }}
-          />
+            <DendriticStructure
+              projects={projects}
+              branches={branches}
+              activeStage={activeStage}
+              revealedStages={playthrough.isPlaying ? playthrough.beat.revealedStages : undefined}
+              focusStage={playthrough.isPlaying ? playthrough.focusStage : undefined}
+              onNodeHover={() => {}}
+              onNodeClick={(id) => {
+                if (!playthrough.isPlaying) {
+                  setSelectedId(id);
+                  sound.playClickSound();
+                }
+              }}
+            />
 
-          <CameraController
-            target={activeCameraTarget}
-            onPositionUpdate={handleCameraPos}
-          />
+            <CameraController
+              target={activeCameraTarget}
+              onPositionUpdate={handleCameraPos}
+            />
 
-          <OrbitControls
-            makeDefault
-            enabled={!playthrough.isPlaying}
-            enablePan
-            enableZoom
-            enableRotate
-            minDistance={isMobile ? 5 : 3}
-            maxDistance={isMobile ? 18 : 22}
-            target={[0, 4, 0]}
+            <OrbitControls
+              makeDefault
+              enabled={!playthrough.isPlaying}
+              enablePan
+              enableZoom
+              enableRotate
+              minDistance={isMobile ? 5 : 3}
+              maxDistance={isMobile ? 18 : 22}
+              target={[0, 4, 0]}
             autoRotate={!playthrough.isPlaying}
             autoRotateSpeed={isMobile ? 0.3 : 0.4}
             rotateSpeed={isMobile ? 0.8 : 1.0}
@@ -364,7 +385,84 @@ export default function App() {
             panSpeed={isMobile ? 0.5 : 1.0}
           />
         </Suspense>
-      </Canvas>
+      </SafeCanvas>
+      ) : (
+        /* Fallback 2D view when WebGL fails */
+        <div style={{
+          width: '100%',
+          height: '100%',
+          background: '#000000',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: '#00f0ff',
+          fontFamily: 'monospace',
+          padding: '20px',
+          textAlign: 'center',
+        }}>
+          <div style={{ fontSize: '18px', marginBottom: '20px', color: '#ff006e' }}>
+            ⚠️ 3D Not Supported
+          </div>
+          <div style={{ fontSize: '14px', marginBottom: '30px', color: '#a0a0a0' }}>
+            Your device doesn't support the 3D visualization.<br/>
+            Here are your projects:
+          </div>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '16px',
+            width: '100%',
+            maxWidth: '800px',
+            overflowY: 'auto',
+            maxHeight: '60vh',
+          }}>
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                onClick={() => setSelectedId(project.id)}
+                style={{
+                  background: 'rgba(0, 240, 255, 0.1)',
+                  border: `1px solid ${project.color}`,
+                  borderRadius: '8px',
+                  padding: '16px',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s',
+                }}
+              >
+                <div style={{ fontSize: '14px', color: project.color, fontWeight: 'bold', marginBottom: '8px' }}>
+                  {project.title}
+                </div>
+                <div style={{ fontSize: '12px', color: '#a0a0a0', marginBottom: '8px' }}>
+                  {project.subtitle}
+                </div>
+                <div style={{ fontSize: '11px', color: '#666' }}>
+                  {project.timeframe}
+                </div>
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={() => {
+              setSelectedId(null);
+              setWebglError(false);
+            }}
+            style={{
+              marginTop: '30px',
+              padding: '12px 24px',
+              background: 'rgba(0, 240, 255, 0.2)',
+              border: '1px solid #00f0ff',
+              color: '#00f0ff',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontFamily: 'monospace',
+              fontSize: '12px',
+            }}
+          >
+            Retry 3D Mode
+          </button>
+        </div>
+      )}
 
       {/* Playthrough overlay (text + progress bar + skip) */}
       <AnimatePresence>
@@ -400,7 +498,7 @@ export default function App() {
           <ProjectCard project={selectedProject} onClose={() => setSelectedId(null)} />
           <div style={{ 
             position: 'fixed', 
-            bottom: isMobile ? '12px' : '16px', 
+            bottom: '24px', 
             left: 0, 
             right: 0, 
             display: 'flex', 

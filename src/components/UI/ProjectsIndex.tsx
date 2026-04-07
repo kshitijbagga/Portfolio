@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { projects } from '../../data/projects';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 interface ProjectsIndexProps {
   onSelectProject: (id: string) => void;
 }
 
 export default function ProjectsIndex({ onSelectProject }: ProjectsIndexProps) {
+  const isMobile = useIsMobile();
+  
   // Group projects by stage for better organization
   const stages = ['nucleation', 'primary', 'secondary', 'convergence'];
   
@@ -18,6 +21,10 @@ export default function ProjectsIndex({ onSelectProject }: ProjectsIndexProps) {
       default: return stage;
     }
   };
+
+  if (isMobile) {
+    return null; // Hide projects index on mobile
+  }
 
   return (
     <motion.div

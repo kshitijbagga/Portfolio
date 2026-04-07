@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { Project } from '../../types';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 interface ProjectCardProps {
   project: Project | null;
@@ -8,6 +9,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, onClose }: ProjectCardProps) {
+  const isMobile = useIsMobile();
+  
   // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -45,15 +48,19 @@ export default function ProjectCard({ project, onClose }: ProjectCardProps) {
             {/* Card */}
             <motion.div
               style={{
-                width: 'min(560px, 90vw)',
+                width: isMobile ? 'calc(100vw - 32px)' : 'min(560px, 90vw)',
+                maxWidth: isMobile ? 'none' : 'none',
+                maxHeight: isMobile ? '70vh' : '80vh',
+                overflowY: isMobile ? 'auto' : 'visible',
                 background: 'rgba(20, 20, 20, 0.98)',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
                 borderLeft: `3px solid ${project.color}`,
                 borderRadius: '8px',
-                padding: '28px 32px',
+                padding: isMobile ? '20px' : '28px 32px',
                 boxShadow: '0 0 40px rgba(0, 0, 0, 0.8), 0 20px 60px rgba(0,0,0,0.7)',
                 backdropFilter: 'blur(30px) saturate(180%)',
                 pointerEvents: 'auto',
+                margin: isMobile ? '16px' : '0',
               }}
               initial={{ opacity: 0, scale: 0.92, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}

@@ -8,6 +8,7 @@ import type { Stage as StageType } from '../../types';
 import Nucleus from './Nucleus';
 import ProjectNode from './ProjectNode';
 import ParticleSystem from './ParticleSystem';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 interface DendriticStructureProps {
   projects: Project[];
@@ -29,10 +30,13 @@ export default function DendriticStructure({
   onNodeClick,
 }: DendriticStructureProps) {
   const groupRef = useRef<THREE.Group>(null);
+  const isMobile = useIsMobile();
 
   useFrame((state) => {
     if (groupRef.current) {
-      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.08) * 0.04;
+      // Slower rotation on mobile to save performance
+      const speed = isMobile ? 0.03 : 0.08;
+      groupRef.current.rotation.y = Math.sin(state.clock.elapsedTime * speed) * 0.04;
     }
   });
 
@@ -55,10 +59,13 @@ export default function DendriticStructure({
     return false;
   };
 
+  // Reduce particle count on mobile
+  const particleCount = isMobile ? 50 : 300;
+
   return (
     <group ref={groupRef}>
       <Nucleus />
-      <ParticleSystem count={300} />
+      <ParticleSystem count={particleCount} />
 
       {branches.map((branch) => {
         const dimmed  = isBranchDimmed(branch);

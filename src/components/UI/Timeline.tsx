@@ -29,12 +29,15 @@ export default function Timeline({ activeStage, onStageClick }: TimelineProps) {
         background: 'rgba(20, 20, 20, 0.85)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         borderRadius: '6px',
-        padding: isMobile ? '8px 12px' : '12px 20px',
+        padding: isMobile ? '10px 16px' : '12px 20px',
         backdropFilter: 'blur(8px)',
-        maxWidth: isMobile ? '95vw' : '90vw',
+        maxWidth: isMobile ? 'calc(100vw - 32px)' : '90vw',
         overflowX: 'auto',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
         boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
       }}
+      className="timeline-wrapper"
     >
       {STAGES.map((stage, i) => {
         const isActive = activeStage === stage.id;

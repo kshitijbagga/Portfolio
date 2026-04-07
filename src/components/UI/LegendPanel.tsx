@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 export default function LegendPanel() {
+  const isMobile = useIsMobile();
+  
   const branchColors = [
     { color: '#8338ec', name: 'Computational Materials', desc: 'Materials science & simulation' },
     { color: '#00f0ff', name: 'Machine Learning', desc: 'ML fundamentals & applications' },
@@ -14,6 +17,10 @@ export default function LegendPanel() {
     { stage: 'Secondary Growth', year: '2024-25', color: '#ff006e', desc: 'Advanced specializations' },
     { stage: 'Convergence', year: 'Present', color: '#00f0ff', desc: 'Professional application' },
   ];
+
+  if (isMobile) {
+    return null; // Hide legend panel on mobile
+  }
 
   return (
     <motion.div

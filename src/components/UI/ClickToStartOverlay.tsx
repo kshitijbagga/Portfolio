@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 interface ClickToStartOverlayProps {
   onInteraction: () => void;
@@ -7,14 +8,24 @@ interface ClickToStartOverlayProps {
 
 export default function ClickToStartOverlay({ onInteraction }: ClickToStartOverlayProps) {
   const [isVisible, setIsVisible] = useState(true);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
+    // Completely skip overlay on mobile
+    if (isMobile) {
+      setIsVisible(false);
+      sessionStorage.setItem('hasInteracted', 'true');
+      // Trigger audio initialization immediately
+      onInteraction();
+      return;
+    }
+    
     // Check if user has already interacted (via sessionStorage)
     const hasInteracted = sessionStorage.getItem('hasInteracted');
     if (hasInteracted) {
       setIsVisible(false);
     }
-  }, []);
+  }, []); // Empty dependency array - only run once on mount
 
   const handleInteraction = () => {
     setIsVisible(false);
@@ -24,7 +35,7 @@ export default function ClickToStartOverlay({ onInteraction }: ClickToStartOverl
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && !isMobile && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

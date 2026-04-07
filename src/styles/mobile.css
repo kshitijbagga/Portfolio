@@ -1,110 +1,227 @@
-/* Mobile Responsiveness Styles */
+/* Mobile Responsiveness Styles - Complete Overhaul */
 
+/* ============================================
+   MOBILE BREAKPOINT (≤768px)
+   ============================================ */
 @media (max-width: 768px) {
-  /* Timeline adjustments for mobile */
-  .timeline-wrapper {
-    padding-bottom: 80px !important;
+  /* Add space at top for header */
+  canvas {
+    margin-top: 100px !important;
+    margin-bottom: 140px !important;
   }
   
-  /* Make timeline more compact on mobile */
-  :global([style*="bottom: 16px"]) {
-    bottom: 12px !important;
+  /* Header - Stack vertically with proper spacing */
+  header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    padding: 12px 16px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    background: linear-gradient(to bottom, rgba(5,8,13,0.95), transparent) !important;
+  }
+  
+  header > div:last-child {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  
+  /* Name styling */
+  .font-display.text-glow {
+    font-size: 14px !important;
+    letter-spacing: 0.08em !important;
+  }
+  
+  /* Button sizing for touch */
+  button {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    font-size: 12px !important;
+  }
+  
+  /* Hide side panels on mobile */
+  [style*="left: '24px'"][style*="top: '80px'"],
+  [style*="right: '24px'"][style*="top: '80px'"] {
+    display: none !important;
+  }
+  
+  /* Force hide MiniMap on mobile - target by content */
+  [style*="TOP VIEW"] {
+    display: none !important;
+  }
+  
+  [style*="width: '130px'"][style*="height: '130px'"] {
+    display: none !important;
+  }
+  
+  /* Hide any element with "Top View" text or SVG with circles at bottom right */
+  div[style*="bottom:"] > div[style*="TOP VIEW"],
+  div[style*="position: absolute"][style*="bottom:"][style*="right:"] {
+    display: none !important;
+  }
+  
+  /* Ensure Playthrough button is visible on mobile */
+  [style*="bottom: '16px'"][style*="left: '50%'"],
+  [style*="transform: 'translateX(-50%)'"] {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1000 !important;
+  }
+  
+  /* Timeline - Move to bottom with space */
+  .timeline-wrapper,
+  [style*="bottom: '24px'"],
+  [style*="bottom: 16px"] {
+    bottom: 16px !important;
+    max-width: calc(100vw - 32px) !important;
+    left: 16px !important;
+    right: auto !important;
+    padding: 10px 16px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none !important;
+    z-index: 100 !important;
+  }
+  
+  /* Project Card - Full screen on mobile */
+  [style*="width: 'min(560px, 90vw)'"] {
+    width: calc(100vw - 32px) !important;
+    max-width: none !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+    margin: 16px !important;
+  }
+  
+  /* Modal adjustments */
+  [style*="width: '420px'"] {
+    width: calc(100vw - 32px) !important;
+    max-width: none !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 24px 20px !important;
+  }
+  
+  /* Font sizes */
+  .font-label {
+    font-size: 10px !important;
+  }
+  
+  .font-mono {
+    font-size: 11px !important;
   }
 }
 
-/* Ensure timeline doesn't overlap content on small screens */
+/* ============================================
+   SMALL MOBILE BREAKPOINT (≤480px)
+   ============================================ */
 @media (max-width: 480px) {
-  /* Reduce padding on very small screens */
-  :global([style*="padding: 12px 20px"]) {
-    padding: 8px 12px !important;
+  /* Even more compact header */
+  header {
+    padding: 10px 12px !important;
+    gap: 8px !important;
   }
-}
-
-/* Base mobile breakpoints */
-@media (max-width: 768px) {
-  /* Hide hints on mobile */
+  
+  .font-display.text-glow {
+    font-size: 13px !important;
+  }
+  
+  /* Timeline even smaller */
+  .timeline-wrapper,
+  [style*="bottom: '24px'"],
+  [style*="bottom: 16px"] {
+    bottom: 12px !important;
+    padding: 8px 12px !important;
+    max-width: calc(100vw - 24px) !important;
+    left: 12px !important;
+  }
+  
+  /* MiniMap tiny */
+  [style*="width: '130px'"],
+  [style*="bottom: '16px'"][style*="right: '24px'"] {
+    width: 75px !important;
+    height: 75px !important;
+    bottom: 100px !important;
+    right: 12px !important;
+  }
+  
+  /* Playthrough button */
+  [style*="bottom: '24px'"][style*="left: '24px'"] {
+    bottom: 100px !important;
+    left: 12px !important;
+  }
+  
+  /* Project card full width */
+  [style*="width: 'min(560px, 90vw)'"] {
+    width: calc(100vw - 24px) !important;
+    padding: 16px !important;
+    margin: 12px !important;
+  }
+  
+  /* Modal full screen */
+  [style*="width: '420px'"] {
+    width: calc(100vw - 24px) !important;
+    padding: 20px 16px !important;
+  }
+  
+  /* Reduce text sizes further */
   .font-label {
     font-size: 9px !important;
   }
   
-  /* Larger touch targets */
-  button {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Adjust header for mobile */
-  header {
-    padding: 12px 16px !important;
-    flex-direction: column;
-    gap: 12px;
-  }
-  
-  /* Stack buttons vertically on small screens */
-  header > div:last-child {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Smaller modals on mobile */
-  [style*="width: '420px'"] {
-    width: 90vw !important;
-    max-width: 400px;
-  }
-  
-  /* Adjust project card for mobile */
-  [style*="width: 'min(560px, 90vw)'"] {
-    width: 95vw !important;
-    padding: 20px 16px !important;
-  }
-  
-  /* Timeline responsive */
-  [style*="bottom: '24px'"] {
-    bottom: 12px !important;
-    padding: 8px 12px !important;
-    max-width: 95vw;
-    overflow-x: auto;
-  }
-  
-  /* MiniMap smaller on mobile */
-  [style*="width: '130px'"] {
-    width: 100px !important;
-    height: 100px !important;
-    bottom: 12px !important;
-    right: 12px !important;
-  }
-  
-  /* Disable hover effects on touch devices */
-  @media (hover: none) {
-    *:hover {
-      /* Override hover styles */
-    }
+  .font-mono {
+    font-size: 10px !important;
   }
 }
 
-/* Tablet breakpoint */
-@media (max-width: 1024px) and (min-width: 769px) {
-  /* Slightly smaller UI elements */
+/* ============================================
+   TABLET BREAKPOINT (769px - 1024px)
+   ============================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Slightly smaller UI */
   [style*="width: '420px'"] {
     width: 380px !important;
   }
+  
+  [style*="width: 'min(560px, 90vw)'"] {
+    width: min(520px, 95vw) !important;
+  }
 }
 
-/* Touch-friendly spacing */
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
 @media (hover: none) and (pointer: coarse) {
   /* Increase spacing between interactive elements */
   button, a {
-    margin: 4px;
+    margin: 2px !important;
   }
   
-  /* Larger tooltips */
-  [style*="padding: '8px 12px'"] {
-    padding: 12px 16px !important;
-    font-size: 12px !important;
+  /* Ensure tap targets are large enough */
+  button {
+    min-height: 48px !important;
+    min-width: 48px !important;
   }
 }
 
-/* Prevent zoom on double-tap */
+/* ============================================
+   SCROLLBAR STYLING FOR MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  /* Hide scrollbars but allow scrolling */
+  .timeline-wrapper::-webkit-scrollbar,
+  [style*="overflow-x: auto"]::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .timeline-wrapper {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
 * {
   touch-action: manipulation;
 }

@@ -6,7 +6,6 @@ import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 // Map world XZ coords → minimap pixel coords
 const MAP_SIZE = 130;
-const MAP_SIZE_MOBILE = 100;
 const WORLD_RANGE = 14; // world units visible (-7 to +7 in X and Z)
 const CENTER = MAP_SIZE / 2;
 
@@ -25,8 +24,14 @@ interface MiniMapProps {
 
 export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps) {
   const isMobile = useIsMobile();
+  
+  // Completely hide on mobile - return early
+  if (isMobile) {
+    return null;
+  }
+  
   const [camPx, camPy] = worldToMap(cameraX, cameraZ);
-  const currentMapSize = isMobile ? MAP_SIZE_MOBILE : MAP_SIZE;
+  const currentMapSize = MAP_SIZE;
 
   const nodeData = useMemo(() =>
     projects.map((p) => {
@@ -45,8 +50,8 @@ export default function MiniMap({ cameraX, cameraZ, activeStage }: MiniMapProps)
       transition={{ duration: 0.4 }}
       style={{
         position: 'fixed',
-        bottom: isMobile ? '12px' : '16px',
-        right: isMobile ? '12px' : '24px',
+        bottom: '16px',
+        right: '24px',
         zIndex: 10,
         width: `${currentMapSize}px`,
         height: `${currentMapSize}px`,

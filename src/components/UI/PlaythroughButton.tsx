@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useIsMobile } from '../../hooks/useDeviceDetection';
 
 interface PlaythroughButtonProps {
   onStart: () => void;
@@ -8,6 +9,7 @@ interface PlaythroughButtonProps {
 
 export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughButtonProps) {
   const [_isExiting, setIsExiting] = useState(false);
+  const isMobile = useIsMobile();
 
   if (isPlaying) {
     return null; // Hide button during playthrough
@@ -29,9 +31,10 @@ export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughBut
       onClick={handleClick}
       style={{
         position: 'fixed',
-        bottom: '24px',
-        left: '24px',
-        zIndex: 100,
+        bottom: isMobile ? '20px' : '24px',
+        left: isMobile ? '50%' : '24px',
+        transform: isMobile ? 'translateX(-50%)' : 'none',
+        zIndex: 9999,
         cursor: 'pointer',
       }}
     >
@@ -41,13 +44,18 @@ export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughBut
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
-          background: 'rgba(20, 20, 20, 0.9)',
+          justifyContent: 'center',
+          gap: isMobile ? '0' : '12px',
+          background: isMobile 
+            ? 'rgba(0, 240, 255, 0.15)' 
+            : 'rgba(20, 20, 20, 0.9)',
           border: '1px solid rgba(0, 240, 255, 0.3)',
-          borderRadius: '12px',
-          padding: '12px 20px',
+          borderRadius: isMobile ? '50%' : '12px',
+          padding: isMobile ? '0' : '12px 20px',
           backdropFilter: 'blur(10px)',
           boxShadow: '0 4px 20px rgba(0, 240, 255, 0.15)',
+          width: isMobile ? '64px' : 'auto',
+          height: isMobile ? '64px' : 'auto',
           transition: 'all 0.3s',
         }}
         onMouseEnter={(e) => {
@@ -72,8 +80,8 @@ export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughBut
             }}
           />
           <svg
-            width="20"
-            height="20"
+            width="28"
+            height="28"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -90,30 +98,32 @@ export default function PlaythroughButton({ onStart, isPlaying }: PlaythroughBut
           </svg>
         </div>
 
-        {/* Text */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <span
-            className="font-label"
-            style={{
-              fontSize: '10px',
-              color: '#00f0ff',
-              letterSpacing: '0.15em',
-              fontWeight: 600,
-            }}
-          >
-            START PLAYTHROUGH
-          </span>
-          <span
-            className="font-label"
-            style={{
-              fontSize: '8px',
-              color: 'rgba(255, 255, 255, 0.4)',
-              letterSpacing: '0.1em',
-            }}
-          >
-            Full Experience
-          </span>
-        </div>
+        {/* Text - desktop only */}
+        {!isMobile && (
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <span
+              className="font-label"
+              style={{
+                fontSize: '10px',
+                color: '#00f0ff',
+                letterSpacing: '0.15em',
+                fontWeight: 600,
+              }}
+            >
+              START PLAYTHROUGH
+            </span>
+            <span
+              className="font-label"
+              style={{
+                fontSize: '8px',
+                color: 'rgba(255, 255, 255, 0.4)',
+                letterSpacing: '0.1em',
+              }}
+            >
+              Full Experience
+            </span>
+          </div>
+        )}
       </motion.div>
     </motion.div>
   );
